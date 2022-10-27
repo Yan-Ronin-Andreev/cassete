@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tape.css">
+    <link rel="stylesheet" href="css/pencil.css">
+    <link rel="icon" href="css/favicon.png">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <script>
+        const ROOM_ID = "<%= roomId %>" 
+        console.log(ROOM_ID)
+    </script>
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js" ></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="js/jquery/jquery.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <img class="pizza" src="css/pizza.png">
+        <div class="pencil"></div>
+        <div class="player">
+
+            <div class="tape corner">
+                <div class="tape-screws">
+                    <div class="tape-screw">
+                        <div class="tape-screw-overflow">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="tape-screw">
+                        <div class="tape-screw-overflow">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="tape-screw">
+                        <div class="tape-screw-overflow">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="tape-screw">
+                        <div class="tape-screw-overflow">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tape-header">
+                    <div class="scotch popup-scotch hide"></div>
+                    <div class="tape-title hide">8009f3efefe <i class="fa-solid fa-pen-to-square" id="copy"></i></div>
+                    <input type="text" class="tape-title scotch-title" maxlength="16">
+                </div>
+                <div class="tape-body another">
+                    <div class="tape-window">
+                        <div class="tape-spools">
+                            <div class="tape-spool">
+                                <div class="tape-spoolbar stopEx">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="tape-film-container">
+                                    <div class="tape-film"></div>
+                                </div>
+                            </div>
+                            <div class="tape-spool">
+                                <div class="tape-spoolbar stopEx">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="tape-film-container">
+                                    <div class="tape-film stopEx"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tape-footer">
+                    <div class="tape-holes">
+                        <div class="tape-hole tape-hole-radial"></div>
+                        <div class="tape-hole tape-hole-square"></div>
+                    </div>
+                    <div class="tape-screw">
+                        <div class="tape-screw-overflow">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="cap other">
+                    <img class="sticker" src="css/sticker.png">
+                    <div class="tape glass">
+                        <span class="flare"></span>
+                        <div class="tape-screws">
+                            <div class="tape-screw">
+                                <div class="tape-screw-overflow">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="tape-screw">
+                                <div class="tape-screw-overflow">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="tape-screw">
+                                <div class="tape-screw-overflow">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="tape-screw">
+                                <div class="tape-screw-overflow">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tape-header">
+                            <div class="scotch"></div>
+                            <div class="tape-title">8009f3efefe</div>
+                            <input type="text" class="tape-title scotch-title hide" maxlength="16">
+                        </div>
+                        <div class="tape-body">
+                            <div class="tape-window">
+                                <div class="tape-spools">
+                                    <div class="tape-spool">
+                                        <div class="tape-spoolbar">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                        <div class="tape-film-container">
+                                            <div class="tape-film"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tape-spool">
+                                        <div class="tape-spoolbar">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                        <div class="tape-film-container">
+                                            <div class="tape-film"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tape-footer">
+                            <div class="tape-holes">
+                                <div class="tape-hole tape-hole-radial"></div>
+                                <div class="tape-hole tape-hole-square"></div>
+                            </div>
+                            <div class="tape-screw">
+                                <div class="tape-screw-overflow">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notch"></div>
+                    <div class="standman">STANDMAN</div>
+                </div>
+                <div class="keyboard">
+                    <div class="button record" id="record">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <div class="button other" id="backward">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                    <div class="button other" id="pause">
+                        <i class="fa-solid fa-play-pause"></i>
+                    </div>
+                    <div class="button other" id="forward">
+                        <i class="fa-solid fa-forward"></i>
+                    </div>
+                    <div class="button other" id="open">
+                        <i class="fa-solid fa-eject"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="microphone">
+                <i class="fa-solid fa-microphone"></i>
+                <div class="scotch small"></div>
+            </div>
+            <div class="sticky">
+                orange (stranger)<br>
+                write something<br>
+                on the tape
+           </div>
+           <div class="sticky second">
+                purple (yours)<br>
+                for record
+            </div>
+            <audio id="audio" autoplay></audio>
+        </div>        
+    </main>
+    <div class="popup">
+        <div class="tape left">
+            <div class="tape-screws">
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tape-header">
+                <div class="scotch popup-scotch hide"></div>
+                <div class="tape-title hide">8009f3efefe <i class="fa-solid fa-pen-to-square" id="copy"></i></div>
+                <input type="text" class="tape-title scotch-title" maxlength="16">
+            </div>
+            <div class="tape-body another">
+                <div class="tape-window">
+                    <div class="tape-spools popup-back">
+                        <div class="tape-spool">
+                            <div class="tape-spoolbar stopEx">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="tape-film-container">
+                                <div class="tape-film"></div>
+                            </div>
+                        </div>
+                        <div class="tape-spool">
+                            <div class="tape-spoolbar stopEx">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="tape-film-container">
+                                <div class="tape-film stopEx"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tape-footer">
+                <div class="tape-holes">
+                    <div class="tape-hole tape-hole-radial"></div>
+                    <div class="tape-hole tape-hole-square"></div>
+                </div>
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tape right">
+            <div class="tape-screws">
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tape-header">
+                <div class="scotch popup-scotch"></div>
+                <div class="tape-title">8009f3efefe <i class="fa-solid fa-pen-to-square" id="copy"></i></div>
+                <input type="text" class="tape-title scotch-title hide" maxlength="16">
+            </div>
+            <div class="tape-body">
+                <div class="tape-window">
+                    <div class="tape-spools popup-back">
+                        <div class="tape-spool">
+                            <div class="tape-spoolbar">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="tape-film-container">
+                                <div class="tape-film"></div>
+                            </div>
+                        </div>
+                        <div class="tape-spool">
+                            <div class="tape-spoolbar">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="tape-film-container">
+                                <div class="tape-film"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tape-footer popup-back">
+                <div class="tape-holes">
+                    <div class="tape-hole tape-hole-radial"></div>
+                    <div class="tape-hole tape-hole-square"></div>
+                </div>
+                <div class="tape-screw">
+                    <div class="tape-screw-overflow">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

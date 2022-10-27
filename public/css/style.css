@@ -1,0 +1,326 @@
+body {
+    background: #d4cfc5;
+    margin: 0; 
+    width:100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+
+}
+
+main
+{
+    margin-top: 10%;
+
+}
+
+.hide
+{
+    display: none;
+}
+
+.player
+{
+    display: flex;
+}
+
+.fa-microphone
+{
+    font-size: 30px;
+}
+
+.microphone
+{
+    left: 35px;
+    top: 290px;
+    position: relative;
+    width: 60px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.microphone::before
+{
+    content: "";
+    padding: 0px 8px;
+    width: 5px;
+    height: 2px;
+    border: #e9e6e0 2px solid;
+    border-radius: 15px;
+    background: black;
+    font-size: 14px;
+    position: relative;
+    top: 25px;
+    left: 21px;
+    box-shadow: inset 0 0.25em rgb(72, 62, 62);
+}
+
+.sticky
+{    
+    width: 200px;
+    height: 185px;
+    background: linear-gradient(to bottom, #f1df58 0%, #f1df58 26px, #f6e576 30px, #fbeb93 34px, #fbeb93 100%);
+    font-size: 21px;
+    font-family: "Handwrite";
+    padding: 42px 4px;
+    position: fixed;
+    right: 48px;
+    top: 22px;
+    rotate: -10deg;
+    box-shadow: 0px 2px 32px 2px rgb(0 0 0 / 13%);
+}
+
+.sticky.second
+{
+    right: 40px;
+    top: 196px;
+    rotate: 5deg;
+    z-index: 1;
+}
+
+.sticker
+{
+    width: 150px;
+    position: absolute;
+}
+
+.pizza
+{
+    position: absolute;
+    left: 115px;
+    top: 380px;
+    rotate: 37deg;
+    width: 170px;
+}
+
+.popup{
+    width:100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    z-index: 10;
+    top:0px;    
+}
+
+.popup > .tape
+{
+    z-index: 11;
+}
+
+.popup-back
+{
+    --background: #7b756b;
+}
+
+.popup-scotch
+{
+    position: relative!important;
+    left: 67%!important;
+    z-index: 3;
+}
+
+.scotch-title
+{
+    background: hsl(56deg 19% 51% / 79%);
+    border: none;
+    clip-path: polygon(3% 0, 2.5% 21%, 1.6% 33%, 2% 39%, 2.1% 61%, 1% 80%, 0 100%, 99.6% 100%, 100% 92%, 98.3% 75%, 97.8% 73%, 98.3% 66%, 98% 34%, 98.5% 19%, 97.8% 9%, 98% 0%);
+    height: 55px;
+    width: 310px;
+    padding-left: 20px;
+    z-index: 3!important;
+}
+
+.notch {
+    transform: rotate(51deg);
+    left: 377px;
+    top: 317px;
+    z-index: 2;
+    position: absolute;
+    width: 50px;
+    height: 10px;
+    border: solid 2px ;
+    border-color: transparent transparent #cec9bf transparent;
+    border-radius: 0 0 240px 50%/60px;
+}
+
+.standman {
+    font-family: "Walkman";
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.record {
+    /*main 3 colors*/
+    --main-red: 255;
+    --main-green: 117;
+    --main-blue: 24;
+}
+
+.record>i {
+    color: #d8d2c9;
+}
+
+.scotch {
+    clip-path: polygon(3% 0, 2.5% 21%, 1.6% 33%, 2% 39%, 2.1% 61%, 1% 80%, 0 100%, 99.6% 100%, 100% 92%, 98.3% 75%, 97.8% 73%, 98.3% 66%, 98% 34%, 98.5% 19%, 97.8% 9%, 98% 0%);
+    height: 55px;
+    width: 170px;
+    rotate: 23deg;
+    background-color: hsl(56deg 19% 51% / 79%);
+    box-shadow: inset 0 0 1em 0.5em hsl(0deg 0% 100% / 10%);
+    position: fixed;
+    left: 329px;
+}
+
+.scotch.small
+{
+    left:-21px!important;
+    position: relative!important;
+    rotate: 302deg;
+    width: 110px;
+    z-index: 1;
+    cursor: pointer!important;
+}
+
+.other {
+    /*main 3 colors*/
+    --main-red: 227;
+    --main-green: 224;
+    --main-blue: 217;
+}
+
+.button,
+.cap {
+    /*main (active) borders 3 colors*/
+    --main-a-red: calc(var(--main-red) - 6);
+    --main-a-green: calc(var(--main-green) - 6);
+    --main-a-blue: calc(var(--main-blue) - 6);
+    /*side borders 3 colors*/
+    --side-red: calc(var(--main-red) - 22);
+    --side-green: calc(var(--main-green) - 24);
+    --side-blue: calc(var(--main-blue) - 37);
+    /*top borders 3 colors*/
+    --top-red: calc(var(--main-red) + 6);
+    --top-green: calc(var(--main-green) + 6);
+    --top-blue: calc(var(--main-blue) + 7);
+    /*bottom borders 3 colors*/
+    --bot-red: calc(var(--main-red) - 74);
+    --bot-green: calc(var(--main-green) - 78);
+    --bot-blue: calc(var(--main-blue) - 83);
+    /*shadow 3 colors*/
+    --shad-red: calc(var(--main-red) - 31);
+    --shad-green: calc(var(--main-green) - 33);
+    --shad-blue: calc(var(--main-blue) - 37);
+    /*shadow (active) 3 colors*/
+    --shad-a-red: calc(var(--main-red) - 45);
+    --shad-a-green: calc(var(--main-green) - 48);
+    --shad-a-blue: calc(var(--main-blue) - 55);
+    /*colors itself*/
+    --main-col: rgb(var(--main-red), var(--main-green), var(--main-blue));
+    --main-a-col: rgb(var(--main-a-red), var(--main-a-green), var(--main-a-blue));
+    --side-col: rgb(var(--side-red), var(--side-green), var(--side-blue));
+    --top-col: rgb(var(--top-red), var(--top-green), var(--top-blue));
+    --bot-col: rgb(var(--bot-red), var(--bot-green), var(--bot-blue));
+    --shad-col: rgb(var(--shad-red), var(--shad-green), var(--shad-blue));
+    --shad-a-col: rgb(var(--shad-a-red), var(--shad-a-green), var(--shad-a-blue));
+}
+
+
+.keyboard {
+    display: flex;
+    width: 600px;
+}
+
+.glass {
+    background: rgba(192, 164, 164, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(192, 164, 164, 0.3);
+}
+
+.button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -khtml-appearance: none;
+    box-sizing: initial;
+    border: none;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 1rem auto;
+    position: relative;
+    width: 46px;
+    height: 19px;
+    padding: 31px 17px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* text */
+    text-align: center;
+    font: bold 25px arial, sans-serif;
+    color: #968f84;
+    transition: box-shadow 0.02s cubic-bezier(0.79, 0.03, 0.43, 1);
+    box-shadow: inset 0px 0px 0px 0px #44413c, 0px 0px 0px 1.5px #44413c,
+        0px 16px 12px 0px #504d471f;
+}
+
+.button::before {
+    left: 8px;
+    top: 9px;
+    border-radius: 7px;
+    /* box-shadow: 0px -1px 0px 0px #dedcdc, 0px 2px 0px 0px #9a948c; */
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 64px;
+    height: 64px;
+    transition: transform 0.01s cubic-bezier(0.79, 0.03, 0.43, 1),
+        background 0.02s cubic-bezier(0.79, 0.03, 0.43, 1);
+    background: linear-gradient(0deg, var(--main-col), var(--shad-col));
+}
+
+.button::after {
+    left: 0;
+    top: 0;
+    z-index: -2;
+    position: absolute;
+    content: "";
+    filter: blur(1px);
+    border-top: 40px solid var(--top-col);
+    border-bottom: 42px solid var(--bot-col);
+    border-left: 40px solid var(--side-col);
+    border-right: 40px solid var(--side-col);
+}
+
+.button.active {
+    transition: box-shadow 0.1s cubic-bezier(0, 0, 0, 1);
+    box-shadow: inset 0px 0px 6px 0px #44413c, 0px 0px 0px 1.5px #44413c,
+        0px 10px 12px 0px #504d471f;
+}
+
+.button.active::before {
+    background: linear-gradient(0deg, var(--main-a-col), var(--shad-a-col));
+    transition: transform 0.1s cubic-bezier(0, 0, 0, 1),
+        background 0.1s cubic-bezier(0, 0, 0, 1);
+}
+
+@font-face {
+    font-family: "Walkman";
+    src: url("fonts/walkman/tapem__.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
