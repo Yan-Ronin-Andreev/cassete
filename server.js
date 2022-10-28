@@ -3,18 +3,11 @@ const app = express()
 const ip = require('ip')
 const server =require('http').Server(app)
 const io = require('socket.io')(server)
-const {ExpressPeerServer} = require('peer')
 const string = "0123456789abcdefghijklmnopjrstuvwxyz"
 const userId = ipTransform(ip.address())
 const PORT = process.env.PORT || 80
 
-const peerSer = ExpressPeerServer(server, {
-    debug: true,
-    path: '/peerjs'
-})
-
 app.set('view engine', 'ejs')
-app.use('/', peerSer)
 app.use(express.static('public'))
 
 app.get('/', (req, res)=>{
