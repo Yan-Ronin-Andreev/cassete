@@ -5,6 +5,7 @@ const server =require('http').Server(app)
 const io = require('socket.io')(server)
 const string = "0123456789abcdefghijklmnopjrstuvwxyz"
 const userId = ipTransform(ip.address())
+const PORT = process.env.PORT || 80
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -39,5 +40,5 @@ function ipTransform(ip) {
     return pi
 }
 
-server.listen(8080)
+server.listen(PORT)
 
