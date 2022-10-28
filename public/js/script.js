@@ -1,8 +1,9 @@
 const socket = io('/')
 const myPeer = new Peer(undefined, {
-    secure: true, 
-    host: 'cassette-player.herokuapp.com', 
-    port: 443,
+    secure: false, 
+    port: location.port, 
+    host: location.hostname,
+    path: "peerjs"
 })
 let peers = {}
 
