@@ -14,6 +14,10 @@ app.get('/', (req, res)=>{
     res.render('index', {roomId: userId})
 })
 
+app.use('/peerjs', require('peer').ExpressPeerServer(srv, {
+    debug: true
+}))
+
 io.on('connection', socket =>{
     socket.on('join-room', (roomId, userId) =>{
         socket.join(roomId)
